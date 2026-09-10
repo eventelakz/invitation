@@ -1,427 +1,776 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Дәулет & Салтанат</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
 
-    <!-- Шрифты -->
+    <title>Ваши имена | EVENTELA.KZ</title>
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet"
+    >
 
     <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
 
-    <!-- =========================
-         MUSIC
-    ========================== -->
+<!-- =====================================================
+     MUSIC
+===================================================== -->
 
-    <audio id="music" loop>
-        <source src="music.mp3" type="audio/mpeg">
-    </audio>
+<audio id="weddingMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
 
 
-    <!-- =========================
-         INTRO SCREEN
-    ========================== -->
+<!-- =====================================================
+     INTRO / ENVELOPE
+===================================================== -->
 
-    <section class="intro" id="intro">
+<section class="opening" id="opening">
 
-        <div class="intro-content">
+    <div class="opening-glow"></div>
 
-            <p class="small-text">
-                WEDDING INVITATION
-            </p>
+    <div class="envelope-scene">
 
-            <h1>
-                Дәулет<br>
-                <span>&</span><br>
-                Салтанат
-            </h1>
+        <p class="opening-label">
+            A SPECIAL INVITATION
+        </p>
 
-            <p class="date">
-                17 • 08 • 2026
-            </p>
 
-            <button class="open-button" onclick="openInvitation()">
-                Открыть приглашение
+        <div class="envelope" id="envelope">
+
+            <div class="envelope-back"></div>
+
+            <div class="envelope-letter">
+
+                <span class="letter-small">
+                    WEDDING
+                </span>
+
+                <strong>
+                    D & S
+                </strong>
+
+                <span class="letter-small">
+                    17.08.2026
+                </span>
+
+            </div>
+
+
+            <div class="envelope-front"></div>
+
+
+            <!-- Wax seal -->
+
+            <button
+                class="wax-seal"
+                id="openButton"
+                aria-label="Открыть приглашение"
+            >
+                E
             </button>
+
+        </div>
+
+
+        <p class="tap-text">
+            прикоснитесь к печати
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main id="mainContent">
+
+
+    <!-- =================================================
+         HERO
+    ================================================== -->
+
+    <section class="hero">
+
+        <img
+            src="photo1.jpg"
+            alt="Дәулет и Салтанат"
+            class="hero-image"
+        >
+
+        <div class="hero-overlay">
+
+            <div class="hero-top">
+                <span>WEDDING INVITATION</span>
+            </div>
+
+
+            <div class="hero-center">
+
+                <p class="hero-small">
+                    Два сердца
+                </p>
+
+                <h1>
+                    Дәулет
+                    <i>&</i>
+                    Салтанат
+                </h1>
+
+                <div class="hero-date">
+                    17 · 08 · 2026
+                </div>
+
+            </div>
+
+
+            <div class="scroll-indicator">
+
+                <span>
+                    SCROLL
+                </span>
+
+                <div></div>
+
+            </div>
 
         </div>
 
     </section>
 
 
-    <!-- =========================
-         MAIN CONTENT
-    ========================== -->
+    <!-- =================================================
+         INTRO TEXT
+    ================================================== -->
 
-    <main id="main">
+    <section class="section invitation-section">
+
+        <p class="section-label">
+            OUR STORY
+        </p>
+
+        <h2>
+            Один день.<br>
+            Одна история.<br>
+            Навсегда.
+        </h2>
+
+        <p class="body-text">
+            В этот особенный день мы хотим разделить
+            нашу радость с самыми близкими людьми.
+            Будем счастливы видеть вас рядом с нами
+            и вместе создать воспоминания,
+            которые останутся на всю жизнь.
+        </p>
+
+    </section>
 
 
-        <!-- HERO -->
+    <!-- =================================================
+         PHOTO
+    ================================================== -->
 
-        <section class="hero">
+    <section class="editorial-photo">
 
-            <img src="photo1.jpg" alt="Дәулет и Салтанат">
+        <img
+            src="photo2.jpg"
+            alt="Wedding"
+        >
 
-            <div class="hero-overlay">
+        <div class="photo-caption">
+            <span>THE BEGINNING</span>
+        </div>
 
-                <p>WE ARE GETTING MARRIED</p>
+    </section>
 
-                <h2>
-                    Дәулет & Салтанат
-                </h2>
 
-                <span>
-                    17.08.2026
+    <!-- =================================================
+         COUNTDOWN
+    ================================================== -->
+
+    <section class="section countdown-section">
+
+        <p class="section-label">
+            COUNTING DOWN
+        </p>
+
+        <h2>
+            До нашей встречи
+        </h2>
+
+
+        <div class="countdown">
+
+            <div>
+                <strong id="days">00</strong>
+                <span>дней</span>
+            </div>
+
+            <div>
+                <strong id="hours">00</strong>
+                <span>часов</span>
+            </div>
+
+            <div>
+                <strong id="minutes">00</strong>
+                <span>минут</span>
+            </div>
+
+            <div>
+                <strong id="seconds">00</strong>
+                <span>секунд</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         CALENDAR
+    ================================================== -->
+
+    <section class="calendar-section section">
+
+        <p class="section-label">
+            SAVE THE DATE
+        </p>
+
+        <h2>
+            Август 2026
+        </h2>
+
+
+        <div class="calendar">
+
+            <div class="weekdays">
+                <span>ПН</span>
+                <span>ВТ</span>
+                <span>СР</span>
+                <span>ЧТ</span>
+                <span>ПТ</span>
+                <span>СБ</span>
+                <span>ВС</span>
+            </div>
+
+
+            <div class="days">
+
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span>1</span>
+                <span>2</span>
+
+                <span>3</span>
+                <span>4</span>
+                <span>5</span>
+                <span>6</span>
+                <span>7</span>
+                <span>8</span>
+                <span>9</span>
+
+                <span>10</span>
+                <span>11</span>
+                <span>12</span>
+                <span>13</span>
+                <span>14</span>
+                <span>15</span>
+                <span>16</span>
+
+                <span class="wedding-day">
+                    17
+                    <small>♥</small>
                 </span>
 
+                <span>18</span>
+                <span>19</span>
+                <span>20</span>
+                <span>21</span>
+                <span>22</span>
+                <span>23</span>
+
+                <span>24</span>
+                <span>25</span>
+                <span>26</span>
+                <span>27</span>
+                <span>28</span>
+                <span>29</span>
+                <span>30</span>
+
+                <span>31</span>
+
             </div>
 
-        </section>
+        </div>
+
+    </section>
 
 
-        <!-- =========================
-             INVITATION TEXT
-        ========================== -->
+    <!-- =================================================
+         PHOTO 3
+    ================================================== -->
 
-        <section class="invitation section">
+    <section class="editorial-photo tall">
 
-            <p class="eyebrow">
-                Құрметті қонақтар!
-            </p>
+        <img
+            src="photo3.jpg"
+            alt="Wedding"
+        >
 
-            <h2>
-                Сіздерді қуанышымызға<br>
-                ортақтасуға шақырамыз
-            </h2>
+        <div class="vertical-name">
+            D · S
+        </div>
 
-            <p class="description">
-                Өміріміздегі ең ерекше күнде
-                сіздерді жанымыздан көргіміз келеді.
-                Келіп, қуанышымызды бірге бөлісіңіздер.
-            </p>
-
-        </section>
+    </section>
 
 
-        <!-- =========================
-             DATE
-        ========================== -->
+    <!-- =================================================
+         PROGRAM
+    ================================================== -->
 
-        <section class="date-section section">
+    <section class="section program-section">
 
-            <p class="eyebrow">
-                OUR SPECIAL DAY
-            </p>
+        <p class="section-label">
+            THE DAY
+        </p>
 
-            <h2>
-                17
-            </h2>
-
-            <p class="month">
-                АВГУСТА 2026
-            </p>
-
-            <div class="line"></div>
-
-            <p>
-                ПОНЕДЕЛЬНИК
-            </p>
-
-        </section>
+        <h2>
+            Программа
+        </h2>
 
 
-        <!-- =========================
-             PHOTO
-        ========================== -->
+        <div class="program">
 
-        <section class="photo-section">
+            <div class="program-item">
 
-            <img src="photo2.jpg" alt="Wedding photo">
+                <span class="program-time">
+                    18:00
+                </span>
 
-        </section>
+                <div>
+                    <h3>
+                        Сбор гостей
+                    </h3>
 
-
-        <!-- =========================
-             PROGRAM
-        ========================== -->
-
-        <section class="program section">
-
-            <p class="eyebrow">
-                PROGRAM
-            </p>
-
-            <h2>
-                Программа вечера
-            </h2>
-
-            <div class="timeline">
-
-                <div class="timeline-item">
-
-                    <div class="time">
-                        18:00
-                    </div>
-
-                    <div class="event">
-                        <h3>
-                            Сбор гостей
-                        </h3>
-
-                        <p>
-                            Встречаемся и начинаем
-                            наш праздничный вечер.
-                        </p>
-                    </div>
-
+                    <p>
+                        Встречаемся, знакомимся
+                        и начинаем наш вечер.
+                    </p>
                 </div>
 
-
-                <div class="timeline-item">
-
-                    <div class="time">
-                        19:00
-                    </div>
-
-                    <div class="event">
-                        <h3>
-                            Начало торжества
-                        </h3>
-
-                        <p>
-                            Праздничная программа
-                            и начало банкета.
-                        </p>
-                    </div>
-
-                </div>
+            </div>
 
 
-                <div class="timeline-item">
+            <div class="program-item">
 
-                    <div class="time">
-                        23:00
-                    </div>
+                <span class="program-time">
+                    19:00
+                </span>
 
-                    <div class="event">
-                        <h3>
-                            Завершение вечера
-                        </h3>
+                <div>
+                    <h3>
+                        Начало торжества
+                    </h3>
 
-                        <p>
-                            Спасибо, что разделили
-                            с нами этот день.
-                        </p>
-                    </div>
+                    <p>
+                        Праздничная программа
+                        и начало банкета.
+                    </p>
 
                 </div>
 
             </div>
 
-        </section>
+
+            <div class="program-item">
+
+                <span class="program-time">
+                    20:00
+                </span>
+
+                <div>
+
+                    <h3>
+                        Ужин & праздник
+                    </h3>
+
+                    <p>
+                        Музыка, танцы, поздравления
+                        и самые тёплые моменты.
+                    </p>
+
+                </div>
+
+            </div>
 
 
-        <!-- =========================
-             LOCATION
-        ========================== -->
+            <div class="program-item">
 
-        <section class="location section">
+                <span class="program-time">
+                    23:00
+                </span>
 
-            <p class="eyebrow">
+                <div>
+
+                    <h3>
+                        До новых встреч
+                    </h3>
+
+                    <p>
+                        Завершаем этот прекрасный
+                        вечер вместе.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         LOCATION
+    ================================================== -->
+
+    <section class="location-section">
+
+        <div class="location-image">
+
+            <img
+                src="photo4.jpg"
+                alt="Venue"
+            >
+
+        </div>
+
+
+        <div class="location-info">
+
+            <p class="section-label">
                 LOCATION
             </p>
 
             <h2>
-                Место проведения
+                Место встречи
             </h2>
 
-            <p class="place">
+            <h3>
                 Ресторан «Romance»
+            </h3>
+
+            <p>
+                г. Алматы,<br>
+                ул. Примерная, 25
             </p>
 
-            <p class="address">
-                г. Алматы, ул. Примерная, 25
-            </p>
 
             <a
                 href="https://2gis.kz/almaty"
                 target="_blank"
-                class="map-button"
+                class="outline-button"
             >
                 Открыть в 2GIS
             </a>
 
-        </section>
+        </div>
+
+    </section>
 
 
-        <!-- =========================
-             PHOTO
-        ========================== -->
+    <!-- =================================================
+         RSVP
+    ================================================== -->
 
-        <section class="photo-section">
+    <section class="section rsvp-section">
 
-            <img src="photo3.jpg" alt="Wedding photo">
+        <p class="section-label">
+            YOUR PRESENCE
+        </p>
 
-        </section>
+        <h2>
+            Будете ли<br>
+            вы с нами?
+        </h2>
 
-
-        <!-- =========================
-             RSVP
-        ========================== -->
-
-        <section class="rsvp section">
-
-            <p class="eyebrow">
-                RSVP
-            </p>
-
-            <h2>
-                Подтвердите<br>
-                ваше присутствие
-            </h2>
-
-            <p class="description">
-                Пожалуйста, заполните форму
-                до 1 августа.
-            </p>
+        <p class="body-text">
+            Пожалуйста, подтвердите своё присутствие.
+            Нам будет очень приятно знать,
+            что вы разделите этот день вместе с нами.
+        </p>
 
 
-            <form
-                action="https://formspree.io/f/ВАШ_ID"
-                method="POST"
-            >
+        <form id="guestForm">
+
+            <div class="input-wrapper">
+
+                <label>
+                    Ваше имя и фамилия
+                </label>
 
                 <input
                     type="text"
                     name="name"
-                    placeholder="Ваше имя и фамилия"
+                    placeholder="Например, Айдана Садыкова"
                     required
                 >
 
-
-                <div class="radio-group">
-
-                    <label>
-                        <input
-                            type="radio"
-                            name="attendance"
-                            value="Приду"
-                            required
-                        >
-
-                        <span>
-                            Приду
-                        </span>
-                    </label>
+            </div>
 
 
-                    <label>
-                        <input
-                            type="radio"
-                            name="attendance"
-                            value="Приду с супругом"
-                        >
+            <div class="input-wrapper">
 
-                        <span>
-                            Приду с супругом
-                        </span>
-                    </label>
+                <label>
+                    Ваш ответ
+                </label>
 
 
-                    <label>
-                        <input
-                            type="radio"
-                            name="attendance"
-                            value="Не смогу присутствовать"
-                        >
+                <label class="choice">
 
-                        <span>
-                            К сожалению, не смогу
-                        </span>
-                    </label>
+                    <input
+                        type="radio"
+                        name="attendance"
+                        value="Буду"
+                        required
+                    >
 
-                </div>
+                    <span>
+                        Буду
+                    </span>
 
-
-                <button
-                    type="submit"
-                    class="submit-button"
-                >
-                    Отправить
-                </button>
-
-            </form>
-
-        </section>
+                </label>
 
 
-        <!-- =========================
-             FINAL PHOTO
-        ========================== -->
+                <label class="choice">
 
-        <section class="final-photo">
+                    <input
+                        type="radio"
+                        name="attendance"
+                        value="Буду с супругом / супругой"
+                    >
 
-            <img src="photo4.jpg" alt="Дәулет и Салтанат">
+                    <span>
+                        Буду с супругом / супругой
+                    </span>
 
-            <div class="final-text">
+                </label>
 
-                <p>
-                    С любовью,
-                </p>
 
-                <h2>
-                    Дәулет & Салтанат
-                </h2>
+                <label class="choice">
 
-                <span>
-                    17.08.2026
-                </span>
+                    <input
+                        type="radio"
+                        name="attendance"
+                        value="Не смогу присутствовать"
+                    >
+
+                    <span>
+                        К сожалению, не смогу
+                    </span>
+
+                </label>
 
             </div>
 
-        </section>
+
+            <div class="input-wrapper">
+
+                <label>
+                    Количество гостей
+                </label>
+
+                <select name="guests">
+
+                    <option value="1">
+                        1
+                    </option>
+
+                    <option value="2">
+                        2
+                    </option>
+
+                    <option value="3">
+                        3
+                    </option>
+
+                    <option value="4">
+                        4
+                    </option>
+
+                </select>
+
+            </div>
 
 
-        <!-- =========================
-             FOOTER
-        ========================== -->
+            <div class="input-wrapper">
 
-        <footer>
+                <label>
+                    Пожелание молодожёнам
+                </label>
+
+                <textarea
+                    name="message"
+                    placeholder="Напишите несколько тёплых слов..."
+                ></textarea>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="dark-button"
+            >
+                Отправить ответ
+            </button>
+
+
+            <div
+                class="form-success"
+                id="formSuccess"
+            >
+
+                Спасибо 🤍<br>
+
+                Ваш ответ получен.
+
+            </div>
+
+        </form>
+
+    </section>
+
+
+    <!-- =================================================
+         FINAL
+    ================================================== -->
+
+    <section class="final-section">
+
+        <img
+            src="photo1.jpg"
+            alt="Дәулет и Салтанат"
+        >
+
+
+        <div class="final-overlay">
 
             <p>
-                Дәулет & Салтанат
+                WITH LOVE
             </p>
 
+            <h2>
+                Дәулет<br>
+                <i>&</i><br>
+                Салтанат
+            </h2>
+
             <span>
-                17 • 08 • 2026
+                17 · 08 · 2026
             </span>
 
-        </footer>
+        </div>
+
+    </section>
 
 
-    </main>
+    <!-- =================================================
+         EVENTELA BRANDING
+    ================================================== -->
+
+    <section class="eventela-section">
+
+        <div class="eventela-monogram">
+            E
+        </div>
 
 
-    <!-- MUSIC BUTTON -->
+        <p class="eventela-label">
+            DIGITAL WEDDING INVITATIONS
+        </p>
 
-    <button
-        class="music-button"
-        id="musicButton"
-        onclick="toggleMusic()"
-    >
+
+        <h2>
+            EVENTELA.KZ
+        </h2>
+
+
+        <p class="eventela-text">
+            Создаём приглашения,
+            которые хочется сохранить.
+        </p>
+
+
+        <p class="eventela-question">
+            Хотите такое же приглашение
+            для вашего особенного дня?
+        </p>
+
+
+        <!--
+        ЗАМЕНИТЕ НОМЕР НА СВОЙ WHATSAPP
+        -->
+
+        <a
+            href="https://wa.me/77000000000?text=Здравствуйте!%20Я%20хочу%20узнать%20подробнее%20о%20свадебных%20приглашениях%20EVENTELA.KZ%20🤍"
+            target="_blank"
+            class="whatsapp-button"
+        >
+            Написать в WhatsApp
+        </a>
+
+
+        <div class="eventela-bottom">
+
+            EVENTELA.KZ
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<!-- =====================================================
+     MUSIC BUTTON
+===================================================== -->
+
+<button
+    class="music-control"
+    id="musicControl"
+>
+    <span class="music-icon">
         ♫
-    </button>
+    </span>
+</button>
 
 
-    <script src="script.js"></script>
+<!-- =====================================================
+     SCRIPT
+===================================================== -->
+
+<script src="script.js"></script>
 
 </body>
 </html>
