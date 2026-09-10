@@ -1628,3 +1628,33 @@ select {
     }
 
 }
+/* =================================
+   SCROLL REVEAL ANIMATION
+================================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition:
+    opacity 1.2s ease,
+    transform 1.2s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Фотографии появляются чуть мягче */
+.reveal-image {
+  opacity: 0;
+  transform: scale(0.97) translateY(25px);
+  transition:
+    opacity 1.5s ease,
+    transform 1.5s ease;
+}
+
+.reveal-image.visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
