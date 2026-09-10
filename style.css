@@ -1,0 +1,696 @@
+/* =========================
+   BASIC
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f5f1eb;
+    color: #34302c;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+    position: fixed;
+    inset: 0;
+
+    z-index: 999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(40, 35, 30, 0.25),
+            rgba(40, 35, 30, 0.35)
+        ),
+        url("photo1.jpg") center / cover no-repeat;
+
+    color: white;
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease;
+}
+
+.intro.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+
+.intro-content {
+    padding: 30px;
+}
+
+
+.small-text {
+    font-size: 10px;
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+}
+
+
+.intro h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(55px, 13vw, 100px);
+    font-weight: 300;
+    line-height: 0.75;
+}
+
+
+.intro h1 span {
+    font-size: 45px;
+}
+
+
+.date {
+    margin-top: 35px;
+
+    font-size: 12px;
+    letter-spacing: 5px;
+}
+
+
+.open-button {
+    margin-top: 45px;
+
+    padding: 15px 28px;
+
+    border: 1px solid rgba(255,255,255,0.8);
+
+    background: transparent;
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 11px;
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+}
+
+
+.open-button:hover {
+    background: white;
+    color: #333;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+#main {
+    display: none;
+}
+
+#main.visible {
+    display: block;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    position: relative;
+
+    height: 100vh;
+
+    overflow: hidden;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 20px;
+
+    color: white;
+
+    background: rgba(0,0,0,0.18);
+}
+
+
+.hero-overlay p {
+    font-size: 9px;
+    letter-spacing: 4px;
+
+    margin-bottom: 30px;
+}
+
+
+.hero-overlay h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(55px, 13vw, 110px);
+
+    font-weight: 300;
+
+    line-height: 0.85;
+}
+
+
+.hero-overlay span {
+    margin-top: 35px;
+
+    font-size: 11px;
+    letter-spacing: 5px;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+    padding: 100px 25px;
+
+    max-width: 750px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+
+.eyebrow {
+    font-size: 9px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 30px;
+
+    text-transform: uppercase;
+}
+
+
+.section h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(40px, 10vw, 70px);
+
+    font-weight: 400;
+
+    line-height: 0.95;
+}
+
+
+/* =========================
+   INVITATION
+========================= */
+
+.invitation {
+    min-height: 500px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+.invitation .description {
+    max-width: 450px;
+
+    margin: 35px auto 0;
+
+    line-height: 2;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   DATE
+========================= */
+
+.date-section h2 {
+    font-size: 120px;
+
+    line-height: 0.7;
+}
+
+
+.month {
+    margin-top: 20px;
+
+    letter-spacing: 5px;
+
+    font-size: 12px;
+}
+
+
+.line {
+    width: 50px;
+
+    height: 1px;
+
+    background: #8b8177;
+
+    margin: 30px auto;
+}
+
+
+.date-section > p:last-child {
+    font-size: 10px;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================
+   PHOTO
+========================= */
+
+.photo-section {
+    width: 100%;
+
+    height: 75vh;
+
+    overflow: hidden;
+}
+
+
+.photo-section img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* =========================
+   PROGRAM
+========================= */
+
+.timeline {
+    max-width: 500px;
+
+    margin: 60px auto 0;
+
+    text-align: left;
+}
+
+
+.timeline-item {
+    display: flex;
+
+    gap: 30px;
+
+    padding: 25px 0;
+
+    border-bottom: 1px solid rgba(50,45,40,0.15);
+}
+
+
+.time {
+    min-width: 60px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 22px;
+}
+
+
+.event h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 25px;
+
+    font-weight: 500;
+
+    margin-bottom: 8px;
+}
+
+
+.event p {
+    font-size: 11px;
+
+    line-height: 1.7;
+
+    opacity: 0.7;
+}
+
+
+/* =========================
+   LOCATION
+========================= */
+
+.location {
+    padding-bottom: 120px;
+}
+
+
+.place {
+    margin-top: 35px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 30px;
+}
+
+
+.address {
+    margin-top: 10px;
+
+    font-size: 12px;
+
+    opacity: 0.7;
+}
+
+
+.map-button {
+    display: inline-block;
+
+    margin-top: 35px;
+
+    padding: 14px 28px;
+
+    border: 1px solid #4d4741;
+
+    color: #34302c;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+}
+
+
+.map-button:hover {
+    background: #34302c;
+
+    color: white;
+}
+
+
+/* =========================
+   RSVP
+========================= */
+
+.rsvp {
+    background: #ebe5dd;
+
+    max-width: none;
+
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+
+.rsvp .description {
+    margin: 25px auto 40px;
+
+    max-width: 400px;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+.rsvp form {
+    max-width: 450px;
+
+    margin: auto;
+}
+
+
+.rsvp input[type="text"] {
+    width: 100%;
+
+    padding: 15px 5px;
+
+    border: none;
+
+    border-bottom: 1px solid #777;
+
+    background: transparent;
+
+    outline: none;
+
+    font-size: 13px;
+}
+
+
+.radio-group {
+    margin-top: 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    text-align: left;
+}
+
+
+.radio-group label {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 11px;
+
+    cursor: pointer;
+}
+
+
+.radio-group input {
+    accent-color: #4d4741;
+}
+
+
+.submit-button {
+    margin-top: 35px;
+
+    padding: 15px 40px;
+
+    background: #34302c;
+
+    border: none;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   FINAL PHOTO
+========================= */
+
+.final-photo {
+    position: relative;
+
+    height: 100vh;
+
+    overflow: hidden;
+}
+
+
+.final-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+.final-text {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    color: white;
+
+    background: rgba(0,0,0,0.25);
+}
+
+
+.final-text p {
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 20px;
+}
+
+
+.final-text h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(50px, 12vw, 100px);
+
+    font-weight: 300;
+}
+
+
+.final-text span {
+    margin-top: 25px;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 50px 20px;
+
+    text-align: center;
+}
+
+
+footer p {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 28px;
+}
+
+
+footer span {
+    display: block;
+
+    margin-top: 10px;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+.music-button {
+    position: fixed;
+
+    right: 20px;
+    bottom: 20px;
+
+    z-index: 100;
+
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,0.7);
+
+    background: rgba(50,45,40,0.65);
+
+    color: white;
+
+    cursor: pointer;
+
+    display: none;
+}
+
+
+.music-button.show {
+    display: block;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .hero {
+        height: 90vh;
+    }
+
+    .photo-section {
+        height: 65vh;
+    }
+
+    .section {
+        padding: 80px 22px;
+    }
+
+    .timeline-item {
+        gap: 20px;
+    }
+
+    .time {
+        min-width: 50px;
+    }
+
+}
