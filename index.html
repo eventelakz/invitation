@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Дәулет & Салтанат</title>
+
+    <!-- Шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         MUSIC
+    ========================== -->
+
+    <audio id="music" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+
+    <!-- =========================
+         INTRO SCREEN
+    ========================== -->
+
+    <section class="intro" id="intro">
+
+        <div class="intro-content">
+
+            <p class="small-text">
+                WEDDING INVITATION
+            </p>
+
+            <h1>
+                Дәулет<br>
+                <span>&</span><br>
+                Салтанат
+            </h1>
+
+            <p class="date">
+                17 • 08 • 2026
+            </p>
+
+            <button class="open-button" onclick="openInvitation()">
+                Открыть приглашение
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main id="main">
+
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <img src="photo1.jpg" alt="Дәулет и Салтанат">
+
+            <div class="hero-overlay">
+
+                <p>WE ARE GETTING MARRIED</p>
+
+                <h2>
+                    Дәулет & Салтанат
+                </h2>
+
+                <span>
+                    17.08.2026
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             INVITATION TEXT
+        ========================== -->
+
+        <section class="invitation section">
+
+            <p class="eyebrow">
+                Құрметті қонақтар!
+            </p>
+
+            <h2>
+                Сіздерді қуанышымызға<br>
+                ортақтасуға шақырамыз
+            </h2>
+
+            <p class="description">
+                Өміріміздегі ең ерекше күнде
+                сіздерді жанымыздан көргіміз келеді.
+                Келіп, қуанышымызды бірге бөлісіңіздер.
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             DATE
+        ========================== -->
+
+        <section class="date-section section">
+
+            <p class="eyebrow">
+                OUR SPECIAL DAY
+            </p>
+
+            <h2>
+                17
+            </h2>
+
+            <p class="month">
+                АВГУСТА 2026
+            </p>
+
+            <div class="line"></div>
+
+            <p>
+                ПОНЕДЕЛЬНИК
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             PHOTO
+        ========================== -->
+
+        <section class="photo-section">
+
+            <img src="photo2.jpg" alt="Wedding photo">
+
+        </section>
+
+
+        <!-- =========================
+             PROGRAM
+        ========================== -->
+
+        <section class="program section">
+
+            <p class="eyebrow">
+                PROGRAM
+            </p>
+
+            <h2>
+                Программа вечера
+            </h2>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+
+                    <div class="time">
+                        18:00
+                    </div>
+
+                    <div class="event">
+                        <h3>
+                            Сбор гостей
+                        </h3>
+
+                        <p>
+                            Встречаемся и начинаем
+                            наш праздничный вечер.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="time">
+                        19:00
+                    </div>
+
+                    <div class="event">
+                        <h3>
+                            Начало торжества
+                        </h3>
+
+                        <p>
+                            Праздничная программа
+                            и начало банкета.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="time">
+                        23:00
+                    </div>
+
+                    <div class="event">
+                        <h3>
+                            Завершение вечера
+                        </h3>
+
+                        <p>
+                            Спасибо, что разделили
+                            с нами этот день.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             LOCATION
+        ========================== -->
+
+        <section class="location section">
+
+            <p class="eyebrow">
+                LOCATION
+            </p>
+
+            <h2>
+                Место проведения
+            </h2>
+
+            <p class="place">
+                Ресторан «Romance»
+            </p>
+
+            <p class="address">
+                г. Алматы, ул. Примерная, 25
+            </p>
+
+            <a
+                href="https://2gis.kz/almaty"
+                target="_blank"
+                class="map-button"
+            >
+                Открыть в 2GIS
+            </a>
+
+        </section>
+
+
+        <!-- =========================
+             PHOTO
+        ========================== -->
+
+        <section class="photo-section">
+
+            <img src="photo3.jpg" alt="Wedding photo">
+
+        </section>
+
+
+        <!-- =========================
+             RSVP
+        ========================== -->
+
+        <section class="rsvp section">
+
+            <p class="eyebrow">
+                RSVP
+            </p>
+
+            <h2>
+                Подтвердите<br>
+                ваше присутствие
+            </h2>
+
+            <p class="description">
+                Пожалуйста, заполните форму
+                до 1 августа.
+            </p>
+
+
+            <form
+                action="https://formspree.io/f/ВАШ_ID"
+                method="POST"
+            >
+
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Ваше имя и фамилия"
+                    required
+                >
+
+
+                <div class="radio-group">
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="attendance"
+                            value="Приду"
+                            required
+                        >
+
+                        <span>
+                            Приду
+                        </span>
+                    </label>
+
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="attendance"
+                            value="Приду с супругом"
+                        >
+
+                        <span>
+                            Приду с супругом
+                        </span>
+                    </label>
+
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="attendance"
+                            value="Не смогу присутствовать"
+                        >
+
+                        <span>
+                            К сожалению, не смогу
+                        </span>
+                    </label>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="submit-button"
+                >
+                    Отправить
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- =========================
+             FINAL PHOTO
+        ========================== -->
+
+        <section class="final-photo">
+
+            <img src="photo4.jpg" alt="Дәулет и Салтанат">
+
+            <div class="final-text">
+
+                <p>
+                    С любовью,
+                </p>
+
+                <h2>
+                    Дәулет & Салтанат
+                </h2>
+
+                <span>
+                    17.08.2026
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FOOTER
+        ========================== -->
+
+        <footer>
+
+            <p>
+                Дәулет & Салтанат
+            </p>
+
+            <span>
+                17 • 08 • 2026
+            </span>
+
+        </footer>
+
+
+    </main>
+
+
+    <!-- MUSIC BUTTON -->
+
+    <button
+        class="music-button"
+        id="musicButton"
+        onclick="toggleMusic()"
+    >
+        ♫
+    </button>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
