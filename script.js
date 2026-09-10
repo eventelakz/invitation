@@ -8,7 +8,7 @@
    SETTINGS
 ===================================================== */
 
-const weddingDate = new Date("2026-08-17T18:00:00");
+const weddingDate = new Date("2026-09-17T18:00:00");
 
 
 /*
