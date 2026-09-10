@@ -1,6 +1,33 @@
-/* =========================
-   BASIC
-========================= */
+/* =====================================================
+   EVENTELA.KZ
+   LUXURY DIGITAL WEDDING INVITATION
+===================================================== */
+
+
+/* =====================================================
+   ROOT
+===================================================== */
+
+:root {
+
+    --cream: #f4f0e9;
+
+    --paper: #ebe5dc;
+
+    --dark: #25221f;
+
+    --brown: #6e6258;
+
+    --line: rgba(37, 34, 31, 0.18);
+
+    --white: #ffffff;
+
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
 
 * {
     margin: 0;
@@ -8,555 +35,1208 @@
     box-sizing: border-box;
 }
 
+
 html {
     scroll-behavior: smooth;
 }
 
+
 body {
-    background: #f5f1eb;
-    color: #34302c;
-    font-family: "Montserrat", sans-serif;
+
+    background: var(--cream);
+
+    color: var(--dark);
+
+    font-family: "DM Sans", sans-serif;
+
     font-weight: 300;
-}
 
-img {
-    display: block;
-    width: 100%;
-}
+    overflow-x: hidden;
 
-button,
-input {
-    font-family: inherit;
 }
 
 
-/* =========================
-   INTRO
-========================= */
-
-.intro {
-    position: fixed;
-    inset: 0;
-
-    z-index: 999;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-
-    background:
-        linear-gradient(
-            rgba(40, 35, 30, 0.25),
-            rgba(40, 35, 30, 0.35)
-        ),
-        url("photo1.jpg") center / cover no-repeat;
-
-    color: white;
-
-    transition:
-        opacity 1s ease,
-        visibility 1s ease;
-}
-
-.intro.hidden {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-}
-
-
-.intro-content {
-    padding: 30px;
-}
-
-
-.small-text {
-    font-size: 10px;
-    letter-spacing: 4px;
-    margin-bottom: 30px;
-}
-
-
-.intro h1 {
-    font-family: "Cormorant Garamond", serif;
-    font-size: clamp(55px, 13vw, 100px);
-    font-weight: 300;
-    line-height: 0.75;
-}
-
-
-.intro h1 span {
-    font-size: 45px;
-}
-
-
-.date {
-    margin-top: 35px;
-
-    font-size: 12px;
-    letter-spacing: 5px;
-}
-
-
-.open-button {
-    margin-top: 45px;
-
-    padding: 15px 28px;
-
-    border: 1px solid rgba(255,255,255,0.8);
-
-    background: transparent;
-    color: white;
-
-    cursor: pointer;
-
-    font-size: 11px;
-    letter-spacing: 1px;
-
-    transition: 0.3s;
-}
-
-
-.open-button:hover {
-    background: white;
-    color: #333;
-}
-
-
-/* =========================
-   MAIN
-========================= */
-
-#main {
-    display: none;
-}
-
-#main.visible {
-    display: block;
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-.hero {
-    position: relative;
-
-    height: 100vh;
-
+body.locked {
     overflow: hidden;
 }
 
-.hero img {
+
+img {
+
+    display: block;
+
     width: 100%;
+
+}
+
+
+button,
+input,
+textarea,
+select {
+
+    font-family: inherit;
+
+}
+
+
+/* =====================================================
+   OPENING
+===================================================== */
+
+.opening {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: #ded5c9;
+
+    overflow: hidden;
+
+    transition:
+        opacity 1.2s ease,
+        visibility 1.2s ease;
+
+}
+
+
+.opening.closed {
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+}
+
+
+.opening-glow {
+
+    position: absolute;
+
+    width: 500px;
+
+    height: 500px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.28);
+
+    filter: blur(80px);
+
+}
+
+
+.envelope-scene {
+
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+
+}
+
+
+.opening-label {
+
+    margin-bottom: 35px;
+
+    font-size: 9px;
+
+    letter-spacing: 5px;
+
+    color: #655b53;
+
+}
+
+
+/* =====================================================
+   ENVELOPE
+===================================================== */
+
+.envelope {
+
+    position: relative;
+
+    width: min(330px, 78vw);
+
+    height: 230px;
+
+    margin: auto;
+
+    perspective: 1000px;
+
+}
+
+
+.envelope-back {
+
+    position: absolute;
+
+    inset: 0;
+
+    background: #e9e0d4;
+
+    box-shadow:
+        0 25px 60px rgba(40,30,20,0.14);
+
+}
+
+
+.envelope-front {
+
+    position: absolute;
+
+    inset: 0;
+
+    background: #ded2c3;
+
+    clip-path: polygon(
+        0 0,
+        50% 55%,
+        100% 0,
+        100% 100%,
+        0 100%
+    );
+
+}
+
+
+.envelope-letter {
+
+    position: absolute;
+
+    left: 10%;
+
+    width: 80%;
+
+    height: 200px;
+
+    top: 15px;
+
+    background: #f8f4ed;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    box-shadow:
+        0 10px 30px rgba(40,30,20,0.08);
+
+    transition:
+        transform 1.2s cubic-bezier(.2,.8,.2,1);
+
+}
+
+
+.envelope.open .envelope-letter {
+
+    transform: translateY(-150px);
+
+}
+
+
+.letter-small {
+
+    font-size: 8px;
+
+    letter-spacing: 4px;
+
+}
+
+
+.envelope-letter strong {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 54px;
+
+    font-weight: 400;
+
+}
+
+
+/* =====================================================
+   WAX SEAL
+===================================================== */
+
+.wax-seal {
+
+    position: absolute;
+
+    z-index: 10;
+
+    left: 50%;
+
+    top: 58%;
+
+    transform: translate(-50%, -50%);
+
+    width: 65px;
+
+    height: 65px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    cursor: pointer;
+
+    color: #f5eee5;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #987d6b,
+            #624e42 65%,
+            #47382f
+        );
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 27px;
+
+    box-shadow:
+        0 8px 20px rgba(40,25,15,0.25);
+
+    transition: transform .4s ease;
+
+}
+
+
+.wax-seal:hover {
+
+    transform: translate(-50%, -50%) scale(1.08);
+
+}
+
+
+.envelope.open .wax-seal {
+
+    opacity: 0;
+
+    pointer-events: none;
+
+}
+
+
+.tap-text {
+
+    margin-top: 35px;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    opacity: .65;
+
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+#mainContent {
+
+    opacity: 0;
+
+    visibility: hidden;
+
+}
+
+
+#mainContent.visible {
+
+    opacity: 1;
+
+    visibility: visible;
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+
+    position: relative;
+
+    height: 100svh;
+
+    min-height: 650px;
+
+    overflow: hidden;
+
+}
+
+
+.hero-image {
+
     height: 100%;
 
     object-fit: cover;
+
+}
+
+
+.hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,.20),
+            rgba(0,0,0,.05) 50%,
+            rgba(0,0,0,.40)
+        );
+
 }
 
 
 .hero-overlay {
+
     position: absolute;
+
+    z-index: 2;
 
     inset: 0;
 
+    color: white;
+
+    padding: 30px;
+
     display: flex;
+
     flex-direction: column;
 
-    justify-content: center;
+    justify-content: space-between;
+
     align-items: center;
 
     text-align: center;
 
-    padding: 20px;
-
-    color: white;
-
-    background: rgba(0,0,0,0.18);
 }
 
 
-.hero-overlay p {
-    font-size: 9px;
-    letter-spacing: 4px;
+.hero-top {
 
-    margin-bottom: 30px;
+    margin-top: 10px;
+
 }
 
 
-.hero-overlay h2 {
+.hero-top span {
+
+    font-size: 8px;
+
+    letter-spacing: 5px;
+
+}
+
+
+.hero-center {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+}
+
+
+.hero-small {
+
     font-family: "Cormorant Garamond", serif;
 
-    font-size: clamp(55px, 13vw, 110px);
+    font-size: 20px;
+
+    margin-bottom: 25px;
+
+    font-style: italic;
+
+}
+
+
+.hero h1 {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(60px, 14vw, 130px);
 
     font-weight: 300;
 
-    line-height: 0.85;
+    line-height: .72;
+
 }
 
 
-.hero-overlay span {
-    margin-top: 35px;
+.hero h1 i {
 
-    font-size: 11px;
-    letter-spacing: 5px;
+    display: block;
+
+    font-size: .48em;
+
+    line-height: 1.6;
+
+    font-weight: 300;
+
 }
 
 
-/* =========================
+.hero-date {
+
+    margin-top: 45px;
+
+    font-size: 10px;
+
+    letter-spacing: 6px;
+
+}
+
+
+.scroll-indicator {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.scroll-indicator span {
+
+    font-size: 7px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.scroll-indicator div {
+
+    width: 1px;
+
+    height: 45px;
+
+    background: white;
+
+    opacity: .7;
+
+}
+
+
+/* =====================================================
    SECTIONS
-========================= */
+===================================================== */
 
 .section {
-    padding: 100px 25px;
 
-    max-width: 750px;
+    padding: 120px 25px;
+
+    max-width: 900px;
 
     margin: auto;
 
     text-align: center;
+
 }
 
 
-.eyebrow {
-    font-size: 9px;
+.section-label {
 
-    letter-spacing: 4px;
+    font-size: 8px;
 
-    margin-bottom: 30px;
+    letter-spacing: 5px;
 
-    text-transform: uppercase;
+    margin-bottom: 35px;
+
+    color: var(--brown);
+
 }
 
 
 .section h2 {
+
     font-family: "Cormorant Garamond", serif;
 
-    font-size: clamp(40px, 10vw, 70px);
+    font-size: clamp(46px, 9vw, 85px);
+
+    line-height: .9;
 
     font-weight: 400;
 
-    line-height: 0.95;
 }
 
 
-/* =========================
-   INVITATION
-========================= */
+.body-text {
 
-.invitation {
-    min-height: 500px;
+    max-width: 470px;
+
+    margin: 40px auto 0;
+
+    font-size: 12px;
+
+    line-height: 2;
+
+    color: #625a53;
+
+}
+
+
+/* =====================================================
+   INVITATION
+===================================================== */
+
+.invitation-section {
+
+    min-height: 650px;
 
     display: flex;
 
     flex-direction: column;
 
     justify-content: center;
+
 }
 
 
-.invitation .description {
-    max-width: 450px;
+/* =====================================================
+   EDITORIAL PHOTO
+===================================================== */
 
-    margin: 35px auto 0;
+.editorial-photo {
 
-    line-height: 2;
+    position: relative;
 
-    font-size: 13px;
-}
+    height: 75svh;
 
-
-/* =========================
-   DATE
-========================= */
-
-.date-section h2 {
-    font-size: 120px;
-
-    line-height: 0.7;
-}
-
-
-.month {
-    margin-top: 20px;
-
-    letter-spacing: 5px;
-
-    font-size: 12px;
-}
-
-
-.line {
-    width: 50px;
-
-    height: 1px;
-
-    background: #8b8177;
-
-    margin: 30px auto;
-}
-
-
-.date-section > p:last-child {
-    font-size: 10px;
-
-    letter-spacing: 3px;
-}
-
-
-/* =========================
-   PHOTO
-========================= */
-
-.photo-section {
-    width: 100%;
-
-    height: 75vh;
+    min-height: 550px;
 
     overflow: hidden;
+
 }
 
 
-.photo-section img {
-    width: 100%;
+.editorial-photo img {
+
     height: 100%;
 
     object-fit: cover;
+
 }
 
 
-/* =========================
-   PROGRAM
-========================= */
+.photo-caption {
 
-.timeline {
+    position: absolute;
+
+    bottom: 25px;
+
+    left: 25px;
+
+    color: white;
+
+}
+
+
+.photo-caption span {
+
+    font-size: 7px;
+
+    letter-spacing: 4px;
+
+}
+
+
+.editorial-photo.tall {
+
+    height: 100svh;
+
+}
+
+
+/* =====================================================
+   VERTICAL NAME
+===================================================== */
+
+.vertical-name {
+
+    position: absolute;
+
+    right: 20px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    writing-mode: vertical-rl;
+
+    color: white;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 18px;
+
+    letter-spacing: 6px;
+
+}
+
+
+/* =====================================================
+   COUNTDOWN
+===================================================== */
+
+.countdown-section {
+
+    background: var(--paper);
+
+    max-width: none;
+
+}
+
+
+.countdown {
+
+    max-width: 600px;
+
+    margin: 70px auto 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+}
+
+
+.countdown div {
+
+    border-right: 1px solid var(--line);
+
+}
+
+
+.countdown div:last-child {
+
+    border-right: none;
+
+}
+
+
+.countdown strong {
+
+    display: block;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(42px, 8vw, 70px);
+
+    font-weight: 400;
+
+}
+
+
+.countdown span {
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    color: var(--brown);
+
+}
+
+
+/* =====================================================
+   CALENDAR
+===================================================== */
+
+.calendar {
+
     max-width: 500px;
 
     margin: 60px auto 0;
 
-    text-align: left;
 }
 
 
-.timeline-item {
-    display: flex;
+.weekdays,
+.days {
 
-    gap: 30px;
+    display: grid;
 
-    padding: 25px 0;
+    grid-template-columns: repeat(7, 1fr);
 
-    border-bottom: 1px solid rgba(50,45,40,0.15);
 }
 
 
-.time {
-    min-width: 60px;
+.weekdays {
 
-    font-family: "Cormorant Garamond", serif;
+    margin-bottom: 15px;
 
-    font-size: 22px;
 }
 
 
-.event h3 {
-    font-family: "Cormorant Garamond", serif;
+.weekdays span {
 
-    font-size: 25px;
-
-    font-weight: 500;
-
-    margin-bottom: 8px;
-}
-
-
-.event p {
-    font-size: 11px;
-
-    line-height: 1.7;
-
-    opacity: 0.7;
-}
-
-
-/* =========================
-   LOCATION
-========================= */
-
-.location {
-    padding-bottom: 120px;
-}
-
-
-.place {
-    margin-top: 35px;
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 30px;
-}
-
-
-.address {
-    margin-top: 10px;
-
-    font-size: 12px;
-
-    opacity: 0.7;
-}
-
-
-.map-button {
-    display: inline-block;
-
-    margin-top: 35px;
-
-    padding: 14px 28px;
-
-    border: 1px solid #4d4741;
-
-    color: #34302c;
-
-    text-decoration: none;
-
-    font-size: 10px;
+    font-size: 8px;
 
     letter-spacing: 1px;
 
-    transition: 0.3s;
+    color: var(--brown);
+
 }
 
 
-.map-button:hover {
-    background: #34302c;
+.days span {
 
-    color: white;
+    position: relative;
+
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 17px;
+
 }
 
 
-/* =========================
-   RSVP
-========================= */
+.wedding-day {
 
-.rsvp {
-    background: #ebe5dd;
+    position: relative;
 
-    max-width: none;
+    width: 43px;
 
-    padding-left: 25px;
-    padding-right: 25px;
-}
-
-
-.rsvp .description {
-    margin: 25px auto 40px;
-
-    max-width: 400px;
-
-    font-size: 12px;
-
-    line-height: 1.7;
-}
-
-
-.rsvp form {
-    max-width: 450px;
+    height: 43px !important;
 
     margin: auto;
+
+    border-radius: 50%;
+
+    background: var(--dark);
+
+    color: white;
+
 }
 
 
-.rsvp input[type="text"] {
-    width: 100%;
+.wedding-day small {
 
-    padding: 15px 5px;
+    position: absolute;
 
-    border: none;
+    bottom: -13px;
 
-    border-bottom: 1px solid #777;
+    font-size: 9px;
 
-    background: transparent;
+    color: var(--dark);
 
-    outline: none;
-
-    font-size: 13px;
 }
 
 
-.radio-group {
-    margin-top: 30px;
+/* =====================================================
+   PROGRAM
+===================================================== */
+
+.program {
+
+    max-width: 600px;
+
+    margin: 70px auto 0;
+
+}
+
+
+.program-item {
+
+    display: grid;
+
+    grid-template-columns: 90px 1fr;
+
+    text-align: left;
+
+    gap: 25px;
+
+    padding: 30px 0;
+
+    border-bottom: 1px solid var(--line);
+
+}
+
+
+.program-time {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 24px;
+
+}
+
+
+.program-item h3 {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 29px;
+
+    font-weight: 400;
+
+    margin-bottom: 8px;
+
+}
+
+
+.program-item p {
+
+    font-size: 10px;
+
+    line-height: 1.8;
+
+    color: #70665d;
+
+}
+
+
+/* =====================================================
+   LOCATION
+===================================================== */
+
+.location-section {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    background: var(--paper);
+
+}
+
+
+.location-image {
+
+    height: 700px;
+
+}
+
+
+.location-image img {
+
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+
+.location-info {
+
+    padding: 80px 50px;
 
     display: flex;
 
     flex-direction: column;
 
-    gap: 15px;
+    justify-content: center;
 
-    text-align: left;
+    align-items: flex-start;
+
 }
 
 
-.radio-group label {
+.location-info h2 {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(50px, 6vw, 75px);
+
+    font-weight: 400;
+
+    line-height: .9;
+
+}
+
+
+.location-info h3 {
+
+    margin-top: 45px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 30px;
+
+    font-weight: 400;
+
+}
+
+
+.location-info > p:not(.section-label) {
+
+    margin-top: 10px;
+
+    font-size: 11px;
+
+    line-height: 1.8;
+
+    color: #71675e;
+
+}
+
+
+.outline-button {
+
+    display: inline-block;
+
+    margin-top: 35px;
+
+    padding: 15px 28px;
+
+    border: 1px solid var(--dark);
+
+    color: var(--dark);
+
+    text-decoration: none;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    transition: .3s;
+
+}
+
+
+.outline-button:hover {
+
+    background: var(--dark);
+
+    color: white;
+
+}
+
+
+/* =====================================================
+   RSVP
+===================================================== */
+
+.rsvp-section {
+
+    max-width: 700px;
+
+}
+
+
+.rsvp-section form {
+
+    margin-top: 65px;
+
+    text-align: left;
+
+}
+
+
+.input-wrapper {
+
+    margin-bottom: 40px;
+
+}
+
+
+.input-wrapper > label:first-child {
+
+    display: block;
+
+    margin-bottom: 15px;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: var(--brown);
+
+}
+
+
+.input-wrapper input[type="text"],
+.input-wrapper textarea,
+.input-wrapper select {
+
+    width: 100%;
+
+    border: none;
+
+    border-bottom: 1px solid var(--line);
+
+    background: transparent;
+
+    padding: 13px 0;
+
+    outline: none;
+
+    color: var(--dark);
+
+    font-size: 12px;
+
+}
+
+
+.input-wrapper textarea {
+
+    height: 100px;
+
+    resize: none;
+
+}
+
+
+.choice {
+
     display: flex;
 
     align-items: center;
 
-    gap: 10px;
+    gap: 12px;
+
+    padding: 13px 0;
 
     font-size: 11px;
 
     cursor: pointer;
+
 }
 
 
-.radio-group input {
-    accent-color: #4d4741;
+.choice input {
+
+    appearance: none;
+
+    width: 16px;
+
+    height: 16px;
+
+    border: 1px solid #877a6e;
+
+    border-radius: 50%;
+
 }
 
 
-.submit-button {
-    margin-top: 35px;
+.choice input:checked {
 
-    padding: 15px 40px;
+    border: 5px solid var(--dark);
 
-    background: #34302c;
+}
+
+
+.dark-button {
+
+    width: 100%;
+
+    padding: 17px;
 
     border: none;
 
+    background: var(--dark);
+
     color: white;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
 
     cursor: pointer;
 
-    font-size: 10px;
-
-    letter-spacing: 1px;
 }
 
 
-/* =========================
-   FINAL PHOTO
-========================= */
+.form-success {
 
-.final-photo {
+    display: none;
+
+    margin-top: 30px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    background: var(--paper);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 24px;
+
+    line-height: 1.3;
+
+}
+
+
+.form-success.show {
+
+    display: block;
+
+}
+
+
+/* =====================================================
+   FINAL
+===================================================== */
+
+.final-section {
+
     position: relative;
 
-    height: 100vh;
+    height: 100svh;
 
-    overflow: hidden;
+    min-height: 650px;
+
 }
 
 
-.final-photo img {
-    width: 100%;
+.final-section img {
+
     height: 100%;
 
     object-fit: cover;
+
 }
 
 
-.final-text {
+.final-overlay {
+
     position: absolute;
 
     inset: 0;
@@ -565,132 +1245,386 @@ input {
 
     flex-direction: column;
 
+    align-items: center;
+
+    justify-content: center;
+
+    color: white;
+
+    text-align: center;
+
+    background: rgba(0,0,0,.22);
+
+}
+
+
+.final-overlay p {
+
+    font-size: 8px;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.final-overlay h2 {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(60px, 13vw, 120px);
+
+    font-weight: 300;
+
+    line-height: .7;
+
+}
+
+
+.final-overlay h2 i {
+
+    font-size: .5em;
+
+    display: block;
+
+    line-height: 1.7;
+
+}
+
+
+.final-overlay span {
+
+    margin-top: 45px;
+
+    font-size: 9px;
+
+    letter-spacing: 5px;
+
+}
+
+
+/* =====================================================
+   EVENTELA
+===================================================== */
+
+.eventela-section {
+
+    position: relative;
+
+    padding: 110px 25px 35px;
+
+    text-align: center;
+
+    background: #24211e;
+
+    color: #eee7dc;
+
+    overflow: hidden;
+
+}
+
+
+.eventela-monogram {
+
+    width: 55px;
+
+    height: 55px;
+
+    margin: 0 auto 30px;
+
+    border: 1px solid rgba(238,231,220,.5);
+
+    border-radius: 50%;
+
+    display: flex;
+
     justify-content: center;
 
     align-items: center;
 
-    text-align: center;
+    font-family: "Cormorant Garamond", serif;
 
-    color: white;
+    font-size: 26px;
 
-    background: rgba(0,0,0,0.25);
 }
 
 
-.final-text p {
-    font-size: 10px;
+.eventela-label {
+
+    font-size: 7px;
+
+    letter-spacing: 4px;
+
+    opacity: .6;
+
+}
+
+
+.eventela-section h2 {
+
+    margin-top: 18px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 48px;
+
+    font-weight: 400;
 
     letter-spacing: 3px;
 
-    margin-bottom: 20px;
 }
 
 
-.final-text h2 {
+.eventela-text {
+
+    max-width: 300px;
+
+    margin: 25px auto 0;
+
     font-family: "Cormorant Garamond", serif;
 
-    font-size: clamp(50px, 12vw, 100px);
+    font-size: 22px;
 
-    font-weight: 300;
+    line-height: 1.1;
+
+    color: #d9d0c4;
+
 }
 
 
-.final-text span {
-    margin-top: 25px;
+.eventela-question {
+
+    margin: 50px auto 20px;
+
+    max-width: 300px;
 
     font-size: 10px;
 
-    letter-spacing: 4px;
+    line-height: 1.7;
+
+    opacity: .7;
+
 }
 
 
-/* =========================
-   FOOTER
-========================= */
+.whatsapp-button {
 
-footer {
-    padding: 50px 20px;
+    display: inline-block;
 
-    text-align: center;
-}
+    padding: 15px 30px;
 
+    border: 1px solid rgba(238,231,220,.6);
 
-footer p {
-    font-family: "Cormorant Garamond", serif;
+    color: #eee7dc;
 
-    font-size: 28px;
-}
-
-
-footer span {
-    display: block;
-
-    margin-top: 10px;
+    text-decoration: none;
 
     font-size: 9px;
 
-    letter-spacing: 3px;
+    letter-spacing: 2px;
+
+    transition: .3s;
+
 }
 
 
-/* =========================
-   MUSIC BUTTON
-========================= */
+.whatsapp-button:hover {
 
-.music-button {
+    background: #eee7dc;
+
+    color: #24211e;
+
+}
+
+
+.eventela-bottom {
+
+    margin-top: 100px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(238,231,220,.12);
+
+    font-size: 7px;
+
+    letter-spacing: 4px;
+
+    opacity: .45;
+
+}
+
+
+/* =====================================================
+   MUSIC
+===================================================== */
+
+.music-control {
+
     position: fixed;
 
+    z-index: 500;
+
     right: 20px;
+
     bottom: 20px;
 
-    z-index: 100;
+    width: 46px;
 
-    width: 45px;
-    height: 45px;
+    height: 46px;
 
     border-radius: 50%;
 
-    border: 1px solid rgba(255,255,255,0.7);
+    border: 1px solid rgba(255,255,255,.6);
 
-    background: rgba(50,45,40,0.65);
+    background: rgba(30,27,24,.55);
 
     color: white;
 
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
     cursor: pointer;
 
-    display: none;
+    backdrop-filter: blur(8px);
+
 }
 
 
-.music-button.show {
-    display: block;
+.music-control.show {
+
+    display: flex;
+
 }
 
 
-/* =========================
+.music-icon {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 20px;
+
+}
+
+
+/* =====================================================
    MOBILE
-========================= */
+===================================================== */
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
-    .hero {
-        height: 90vh;
-    }
-
-    .photo-section {
-        height: 65vh;
-    }
 
     .section {
-        padding: 80px 22px;
+
+        padding: 95px 22px;
+
     }
 
-    .timeline-item {
-        gap: 20px;
+
+    .hero {
+
+        min-height: 650px;
+
     }
 
-    .time {
-        min-width: 50px;
+
+    .hero h1 {
+
+        font-size: 70px;
+
+    }
+
+
+    .countdown {
+
+        gap: 0;
+
+    }
+
+
+    .countdown strong {
+
+        font-size: 38px;
+
+    }
+
+
+    .countdown span {
+
+        font-size: 7px;
+
+    }
+
+
+    .days span {
+
+        height: 45px;
+
+    }
+
+
+    .location-section {
+
+        display: block;
+
+    }
+
+
+    .location-image {
+
+        height: 70svh;
+
+    }
+
+
+    .location-info {
+
+        padding: 80px 25px;
+
+        align-items: center;
+
+        text-align: center;
+
+    }
+
+
+    .location-info h2 {
+
+        font-size: 58px;
+
+    }
+
+
+    .program-item {
+
+        grid-template-columns: 65px 1fr;
+
+        gap: 15px;
+
+    }
+
+
+    .program-item h3 {
+
+        font-size: 25px;
+
+    }
+
+
+    .final-section {
+
+        min-height: 650px;
+
+    }
+
+
+    .eventela-section h2 {
+
+        font-size: 40px;
+
     }
 
 }
