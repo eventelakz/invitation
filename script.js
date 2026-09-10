@@ -331,3 +331,114 @@ guestForm.addEventListener(
 
     }
 );
+
+
+/* =====================================================
+   SCROLL REVEAL
+   Плавное появление элементов
+===================================================== */
+
+const revealElements = document.querySelectorAll(
+  ".section, .photo, .editorial-photo, .countdown, .program, .location, .rsvp"
+);
+
+revealElements.forEach(function(element) {
+  element.classList.add("reveal");
+});
+
+const revealObserver = new IntersectionObserver(
+  function(entries) {
+
+    entries.forEach(function(entry) {
+
+      if (entry.isIntersecting) {
+
+        entry.target.classList.add("visible");
+
+      }
+
+    });
+
+  },
+  {
+    threshold: 0.15
+  }
+);
+
+revealElements.forEach(function(element) {
+  revealObserver.observe(element);
+});
+
+
+/* =====================================================
+   SLOW AUTO SCROLL
+   Медленная автоматическая прокрутка
+===================================================== */
+
+let autoScroll;
+let autoScrolling = false;
+
+function startAutoScroll() {
+
+  if (autoScrolling) return;
+
+  autoScrolling = true;
+
+  autoScroll = setInterval(function() {
+
+    window.scrollBy(0, 1);
+
+  }, 70);
+
+}
+
+
+function stopAutoScroll() {
+
+  clearInterval(autoScroll);
+
+  autoScrolling = false;
+
+}
+
+
+/*
+   Если гость сам начинает листать,
+   автоматическая прокрутка останавливается.
+*/
+
+window.addEventListener(
+  "touchstart",
+  stopAutoScroll,
+  { passive: true }
+);
+
+window.addEventListener(
+  "wheel",
+  stopAutoScroll,
+  { passive: true }
+);
+
+window.addEventListener(
+  "mousedown",
+  stopAutoScroll
+);
+
+
+/*
+   Начинаем автоскролл через 3 секунды
+   после открытия приглашения.
+*/
+
+openButton.addEventListener(
+  "click",
+  function() {
+
+    setTimeout(function() {
+
+      startAutoScroll();
+
+    }, 3000);
+
+  }
+);
